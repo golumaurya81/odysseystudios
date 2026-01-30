@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Odyssey Studios</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 600px;
+      padding: 40px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+
+    h1 span {
+      color: #00ffd5;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      color: #dcdcdc;
+    }
+
+    .tagline {
+      margin-top: 20px;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #ffffff;
+    }
+
+    .email {
+      margin-top: 25px;
+      font-size: 1rem;
+    }
+
+    .email a {
+      color: #00ffd5;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .email a:hover {
+      text-decoration: underline;
+    }
+
+    .glow {
+      margin-top: 35px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Floating background circles */
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(0, 255, 213, 0.15);
+      animation: float 8s infinite ease-in-out;
+    }
+
+    .circle:nth-child(1) {
+      width: 200px;
+      height: 200px;
+      top: 10%;
+      left: 15%;
+    }
+
+    .circle:nth-child(2) {
+      width: 120px;
+      height: 120px;
+      bottom: 15%;
+      right: 20%;
+      animation-duration: 10s;
+    }
+
+    .circle:nth-child(3) {
+      width: 80px;
+      height: 80px;
+      bottom: 30%;
+      left: 10%;
+      animation-duration: 12s;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background effects -->
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+
+  <div class="container">
+    <h1><span>Odyssey</span> Studios</h1>
+
+    <p class="tagline">Crafting new worlds & experiences</p>
+
+    <p>Odyssey Studios is an independent game and technology studio.</p>
+    <p>We are currently working on new projects and experiences.</p>
+    <p>Our website will be live soon.</p>
+
+    <div class="email">
+      Contact: <a href="mailto:odysseystudios.in@gmail.com">odysseystudios.in@gmail.com</a>
+    </div>
+
+    <div class="glow">
+      © 2026 Odyssey Studios
+    </div>
+  </div>
+
+  <script>
+    // Small JS effect (title pulse)
+    const title = document.querySelector("h1");
+    setInterval(() => {
+      title.style.opacity = "0.8";
+      setTimeout(() => {
+        title.style.opacity = "1";
+      }, 300);
+    }, 3000);
+  </script>
+
+</body>
+</html>
