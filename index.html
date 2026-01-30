@@ -14,47 +14,84 @@
     }
 
     body {
-      height: 100vh;
+      min-height: 100vh;
       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ================= HEADER ================= */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(8px);
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #00ffd5;
+      animation: logoGlow 2.5s infinite alternate;
+    }
+
+    @keyframes logoGlow {
+      from {
+        text-shadow: 0 0 5px rgba(0,255,213,0.4);
+      }
+      to {
+        text-shadow: 0 0 18px rgba(0,255,213,0.9);
+      }
+    }
+
+    /* ================= MAIN ================= */
+    main {
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
-      overflow: hidden;
+      padding: 120px 20px 80px;
+      text-align: center;
     }
 
     .container {
-      text-align: center;
-      max-width: 600px;
-      padding: 40px;
+      max-width: 650px;
       animation: fadeIn 1.5s ease;
     }
 
     h1 {
-      font-size: 3rem;
+      font-size: 3.2rem;
+      margin-bottom: 10px;
       letter-spacing: 2px;
-      margin-bottom: 15px;
     }
 
     h1 span {
       color: #00ffd5;
     }
 
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 12px;
-      color: #dcdcdc;
+    .tagline {
+      font-size: 1.4rem;
+      margin-bottom: 30px;
+      color: #eaeaea;
+      font-weight: 500;
     }
 
-    .tagline {
-      margin-top: 20px;
-      font-size: 1.3rem;
-      font-weight: 500;
-      color: #ffffff;
+    .content p {
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+      color: #dcdcdc;
+      line-height: 1.6;
     }
 
     .email {
-      margin-top: 25px;
+      margin-top: 30px;
       font-size: 1rem;
     }
 
@@ -68,16 +105,25 @@
       text-decoration: underline;
     }
 
-    .glow {
-      margin-top: 35px;
-      font-size: 0.9rem;
-      opacity: 0.8;
+    /* ================= FOOTER ================= */
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.85rem;
+      background: rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(6px);
+      color: #cfcfcf;
     }
 
+    /* ================= EFFECTS ================= */
     @keyframes fadeIn {
       from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(25px);
       }
       to {
         opacity: 1;
@@ -85,34 +131,34 @@
       }
     }
 
-    /* Floating background circles */
     .circle {
       position: absolute;
       border-radius: 50%;
       background: rgba(0, 255, 213, 0.15);
       animation: float 8s infinite ease-in-out;
+      z-index: 0;
     }
 
     .circle:nth-child(1) {
       width: 200px;
       height: 200px;
-      top: 10%;
-      left: 15%;
+      top: 15%;
+      left: 10%;
     }
 
     .circle:nth-child(2) {
       width: 120px;
       height: 120px;
-      bottom: 15%;
-      right: 20%;
+      bottom: 20%;
+      right: 15%;
       animation-duration: 10s;
     }
 
     .circle:nth-child(3) {
       width: 80px;
       height: 80px;
-      bottom: 30%;
-      left: 10%;
+      bottom: 35%;
+      left: 20%;
       animation-duration: 12s;
     }
 
@@ -126,39 +172,39 @@
 
 <body>
 
-  <!-- Background effects -->
+  <!-- Background circles -->
   <div class="circle"></div>
   <div class="circle"></div>
   <div class="circle"></div>
 
-  <div class="container">
-    <h1><span>Odyssey</span> Studios</h1>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">Odyssey Studios</div>
+  </header>
 
-    <p class="tagline">Crafting new worlds & experiences</p>
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="container">
+      <h1><span>Odyssey</span> Studios</h1>
 
-    <p>Odyssey Studios is an independent game and technology studio.</p>
-    <p>We are currently working on new projects and experiences.</p>
-    <p>Our website will be live soon.</p>
+      <div class="tagline">Crafting new worlds & experiences</div>
 
-    <div class="email">
-      Contact: <a href="mailto:odysseystudios.in@gmail.com">odysseystudios.in@gmail.com</a>
+      <div class="content">
+        <p>Odyssey Studios is an independent game and technology studio.</p>
+        <p>We are currently working on new projects and experiences.</p>
+        <p>Our website will be live soon.</p>
+      </div>
+
+      <div class="email">
+        Contact: <a href="mailto:odysseystudios.in@gmail.com">odysseystudios.in@gmail.com</a>
+      </div>
     </div>
+  </main>
 
-    <div class="glow">
-      © 2026 Odyssey Studios
-    </div>
-  </div>
-
-  <script>
-    // Small JS effect (title pulse)
-    const title = document.querySelector("h1");
-    setInterval(() => {
-      title.style.opacity = "0.8";
-      setTimeout(() => {
-        title.style.opacity = "1";
-      }, 300);
-    }, 3000);
-  </script>
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Odyssey Studios
+  </footer>
 
 </body>
 </html>
